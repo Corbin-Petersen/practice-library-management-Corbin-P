@@ -40,42 +40,35 @@ class LibraryItem {
         this.isAvailable = true;
         console.log(`${this.title} has been sucessfully returned.\n`);
     }
-    addInfo(title, id) { // added method to more easily add info to child classes
-        this.title = title;
-        this.id = id;
-    }
 }
 
 class Book extends LibraryItem {
-    constructor(author, genre) {
-        super();
+    constructor(title, id, author, genre, isAvailable) {
+        super(title, id, isAvailable);
         this.author = author;
         this.genre = genre;
     }
 }
 
 class DVD extends LibraryItem {
-    constructor(director, duration) {
-        super();
+    constructor(title, id, director, duration, isAvailable) {
+        super(title, id, isAvailable);
         this.director = director;
         this.duration = duration;
     }
 }
 
 class Magazine extends LibraryItem {
-    constructor(issueNumber, publisher) {
-        super();
+    constructor(title, id, issueNumber, publisher, isAvailable) {
+        super(title, id, isAvailable);
         this.issueNumber = issueNumber;
         this.publisher = publisher;
     }
 }
 
-let book1 = new Book('Michael Crichton', 'Science Fiction');
-book1.addInfo('The Andromeda Strain', 'BKSF234');
-let dvd1 = new DVD('Christopher Nolan', 'thriller');
-dvd1.addInfo('Inception', 'MVTH123');
-let magazine1 = new Magazine(435, 'DC Comics');
-magazine1.addInfo('Superman', 'CMSM567');
+let book1 = new Book('The Andromeda Strain', 'BKSF234', 'Michael Crichton', 'Science Fiction');
+let dvd1 = new DVD('Inception', 'MVTH123', 'Christopher Nolan', 'thriller');
+let magazine1 = new Magazine('Superman', 'CMSM567', 435, 'DC Comics');
 
 console.log(book1);
 console.log(dvd1);
