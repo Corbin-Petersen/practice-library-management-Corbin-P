@@ -26,7 +26,7 @@ You are tasked with designing a library management system. The library lends out
 // MY CODE
 
 class LibraryItem {
-    constructor(title = 'unknown', id = null, isAvailable = true){
+    constructor(title, id, isAvailable = true){
         this.title = title;
         this.id = id;
         this.isAvailable = isAvailable;
